@@ -14,7 +14,6 @@ int main() {
 
     printf("\n--- Allowed Operations ---\n");
 
-    // Check individual permissions using bitwise AND (&)
     if (user_perm & PERM_VIEW) {
         printf("- Viewing Model\n");
     }
@@ -28,7 +27,6 @@ int main() {
         printf("- Deploying Model\n");
     }
 
-    // Check for combined condition (Train AND Deploy)
     printf("\n--- Advanced Access Check ---\n");
     if ((user_perm & PERM_TRAIN) && (user_perm & PERM_DEPLOY)) {
         printf("Status: User has full pipeline access (Training + Deployment).\n");
