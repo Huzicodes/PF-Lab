@@ -8,7 +8,7 @@ int main(void) {
     scanf("%d", &reading);
 
     while(reading>0) {
-        if((reading/10)%2 == 0) {
+        if((reading%10)%2 == 0) {
             even++;
         } else {
             odd++;
