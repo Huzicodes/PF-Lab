@@ -5,17 +5,19 @@ int main(void) {
     char str[MAX];
     char temp[MAX];
 
-    printf("Enter a string: ");
+    printf("Enter a string: "); // taking a string input from the user
     scanf("%s", str);
     printf("\nYour string is: %s", str);
 
     int i = 0;
-    while(str[i] != '\0') {
+    int size;
+    while(str[i] != '\0') { // counting the length of the string
         i++;
+        size = i;
     }
-    printf("\n\nThe length of your string is %d", i);
+    printf("\n\nThe length of your string is %d", size);
     
-    int j = i-1;
+    int j = i-1; // reversing the string
     i = 0;
     char r_str[MAX];
     while(str[i] != '\0') {
@@ -28,16 +30,16 @@ int main(void) {
         r_str[i] = temp[i];
         i++;
     }
+    r_str[i] = '\0';
     printf("\n\nThe reverse of your string is: %s", r_str);
 
-    int size = 0;
+    int start = 0; // checking if the string is a palindrome
+    int end = size - 1;
+    int is_palindrome = 1;
     for(int i = 0; str[i] != '\0'; i++) {
         size++;
         str[i] = tolower(str[i]);
     }
-    int start = 0;
-    int end = size - 1;
-    int is_palindrome = 1;
     while(start<end) {
         if(str[start] != str[end]) {
             printf("\n\nThe string is not a palindrome.");
@@ -51,13 +53,16 @@ int main(void) {
         printf("\n\nThe string is a palindrome.");
     }
 
-    int vowels = 0;
+    // counting the number of vowels and consonants in the string
+    int vowels = 0; 
     int consonants = 0;
     for(int v = 0; v<size; v++) {
-        if(str[v] == 'a' || str[v] == 'e' || str[v] == 'i' || str[v] == 'o' || str[v] == 'u') {
-            vowels++;
-        } else {
-            consonants++;
+        if(str[v] >= 'a' && str[v] <= 'z') {
+            if(str[v] == 'a' || str[v] == 'e' || str[v] == 'i' || str[v] == 'o' || str[v] == 'u') {
+                vowels++;
+            } else {
+                consonants++;
+            }
         }
     }
     printf("\n\nThe number of vowels in your string is: %d", vowels);
