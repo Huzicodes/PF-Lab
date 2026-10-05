@@ -42,7 +42,7 @@ int main(void) {
             printf("The index of %d is %d", target, l);
             break;
         }
-        else if(l == 7) {
+        else if(l == used_capacity-1) {
             printf("The number %d is not in the array.", target);
         }
     }
@@ -53,7 +53,7 @@ int main(void) {
     printf("Enter the index where you want to insert the number: ");
     scanf("%d", &index);
 
-    if(index>=0 && index < 8) { // inserting an element into the array at a specific index
+    if(index>=0 && index < used_capacity+1) { // inserting an element into the array at a specific index
         if(used_capacity < 8) {
             for(int m = used_capacity-1; m>=index; m--) {
                 array[m+1] = array[m];
@@ -72,7 +72,7 @@ int main(void) {
     printf("\n\nEnter the index where you want to delete the number: ");
     scanf("%d", &index);
 
-    if(index>=0 && index<8) {
+    if(index>=0 && index<used_capacity) { // deleting an element from the array at a specific index
         for(int n = index+1; n<used_capacity; n++) {
             array[n-1] = array[n];
         }
